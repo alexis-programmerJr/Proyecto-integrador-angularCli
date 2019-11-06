@@ -1,0 +1,45 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button>
+        <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+      </button>
+      <h1>Inicio</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/login'" routerActiveLink="active"> Cerrar Secion </a>
+        <a mat-button [routerLink]="'/create-account'"> Perfil </a>
+        <a mat-button [routerLink]="'/contacts'"> Contactos </a>
+        <a mat-button  [routerLink]="'/registro'" routerLinkActive="active"> Registro</a>
+
+  
+      </div>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+        <span style="font-size: 12px;">Realiza una publicacion</span>
+      </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav>
+      <mat-nav-list>
+  
+        <a mat-list-item [routerLink]="'/accounts'"> Actividades</a>
+        <a mat-list-item [routerLink]="'/ListFriends'" routerLinkActive="active">Grupos </a>
+        <a mat-list-item [routerLink]="'/Mas'"  routerLinkActive="active"> Nuevo </a>
+        <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a>
+  
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div style="height: 88vh;">
+  
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+  <div class="center">
+
+  </div>
